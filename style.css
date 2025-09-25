@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;   /* ganti height ke min-height biar ga kepotong di HP */
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    margin: 0; /* hilangin scroll horizontal */
+    padding: 10px;
+}
+
+.card {
+    background: white;
+    width: 90%;          /* fleksibel */
+    max-width: 350px;    /* batas biar ga terlalu lebar */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card img { 
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 480px) {
+    .card {
+        padding: 15px;
+    }
+
+    .card img {
+        width: 80px;
+        height: 80px;
+    }
+}
