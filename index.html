@@ -11,24 +11,27 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: #f9f9f9;
+      /* Sunset gradient 🌅 */
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad390);
+      min-height: 100vh;
     }
 
     .card {
       text-align: center;
-      background: white;
+      background: rgba(255, 255, 255, 0.9); /* sedikit transparan */
       padding: 20px;
-      margin: 40px auto;       /* otomatis ke tengah */
+      margin: 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
       width: 90%;
-      max-width: 300px;        /* lebih kecil biar rapi */
+      max-width: 400px;
+      backdrop-filter: blur(6px); /* efek kaca */
     }
 
     .card img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;      /* lingkaran sempurna */
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
       object-fit: cover;
       border: 3px solid #ddd;
       margin-bottom: 15px;
@@ -39,30 +42,37 @@
       padding: 0;
       margin: 20px 0;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
+      gap: 15px;
     }
 
     nav ul li {
-      background-color: white;
-      padding: 10px 15px;
+      background: white;
+      padding: 10px 20px;
       border-radius: 10px;
-      min-width: 80px;
+      min-width: 100px;
       text-align: center;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
 
     nav ul li:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      background: linear-gradient(45deg, #ff6a00, #ee0979); /* gradasi hover tombol */
+    }
+
+    nav ul li:hover a {
+      color: white;
     }
 
     nav ul li a {
       text-decoration: none;
       color: black;
       font-weight: 500;
+      display: block;
+      transition: color 0.3s ease;
     }
 
     /* Responsive untuk layar kecil */
@@ -73,18 +83,17 @@
       }
 
       .card img {
-        width: 110px;
-        height: 110px;
+        width: 120px;
+        height: 120px;
       }
 
       nav ul {
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
       }
 
       nav ul li {
-        width: 100%;
-        max-width: 250px;
+        padding: 8px 15px;
       }
     }
   </style>
